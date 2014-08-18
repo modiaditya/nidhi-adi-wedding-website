@@ -365,7 +365,21 @@ $(window).load(function(){
             }, { offset: -450 });
 
             // waypoint for "the ceremony location" section
+            $('#sangeetlocationphoto').waypoint(function() {
+                $('.location, .hotels, .attractions').removeClass('fakeheight');
+                $('.location .thelocation, .hotels .row, .attractions .row').removeClass('hide');
+                $('.location .thelocation, .hotels .row, .attractions .row').addClass('animated fadeInUp');
+
+            }, { offset: -450 });
+
             $('#weddinglocationphoto').waypoint(function() {
+                $('.location, .hotels, .attractions').removeClass('fakeheight');
+                $('.location .thelocation, .hotels .row, .attractions .row').removeClass('hide');
+                $('.location .thelocation, .hotels .row, .attractions .row').addClass('animated fadeInUp');
+
+            }, { offset: -450 });
+
+            $('#receptionlocationphoto').waypoint(function() {
                 $('.location, .hotels, .attractions').removeClass('fakeheight');
                 $('.location .thelocation, .hotels .row, .attractions .row').removeClass('hide');
                 $('.location .thelocation, .hotels .row, .attractions .row').addClass('animated fadeInUp');
