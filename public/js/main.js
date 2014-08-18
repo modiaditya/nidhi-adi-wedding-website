@@ -262,8 +262,16 @@ $(window).load(function(){
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
             }, { offset: '10%' });
 
+            $('#sangeetlocation').waypoint(function() {
+                $(this).find('header').removeClass('hide').addClass('animated fadeIn');
+            }, { offset: '10%' });
+
             // waypoint to the 'the wedding location' section
             $('#weddinglocation').waypoint(function() {
+                $(this).find('header').removeClass('hide').addClass('animated fadeIn');
+            }, { offset: '10%' });
+
+            $('#receptionlocation').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
             }, { offset: '10%' });
 
