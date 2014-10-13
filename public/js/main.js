@@ -607,6 +607,7 @@ $('#myTab a').click(function (e) {
             });
         }
         
+        
         //now when the validation is done we check if the error variable is false (no errors)
         if(guesterror == false){
             //disable the submit button to avoid spamming
@@ -616,9 +617,11 @@ $('#myTab a').click(function (e) {
             /* using the jquery's post(ajax) function and a lifesaver
             function serialize() which gets all the data from the form
             we submit it to send_email.php */
-            $.post("sign_guestbook.php", $("#signguestbook").serialize(),function(guestresult){
+            $.post("submitGuestbook", $("#signguestbook").serialize(),function(response, status, xhr){
                 //and after the ajax request ends we check the text returned
-                if(guestresult == 'sent'){
+                console.log("amodi" )
+                if(xhr.status == 200){
+                    console.log("here")
                     //if the mail is sent remove the submit paragraph
                      $('#gb_submit_m').remove();
                     //and show the mail success div with fadeIn
