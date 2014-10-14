@@ -21,17 +21,32 @@ var MyDate = new Date();
 MyDate.toMysqlFormat(); //return MySQL Datetime format
 
 
-function insertGuestbookRecord(name, email, message) {
+module.exports.insertGuestbookRecord = function(name, email, message, callback) {
 	var insertData = {
 		name: name,
-		emai: email,
+		email: email,
 		message: message,
 		datetime: new Date().toMysqlFormat()
 	}
+	console.log(insertData)
 	pool.getConnection(function(err, connection) {
 		connection.query('INSERT INTO guestbook SET ?', insertData, function(err, result) {
-			if(err)	throw err;
+			if(err)	callback(null, err)
+			else callback(result.id, null)
 			connection.release();
 		});
 	});	
+}
+
+module.exports.getGuestbookRecords = function(callback) {
+	pool.getConnection(function(err, connection) {
+		connection.query('SELECT name, message, CONCAT(MONTHNAME(datetime), " ", DAYOFMONTH(datetime), ", ", YEAR(datetime)) AS date  FROM guestbook', function(err, result) {
+			if(err)	throw err;
+			else {
+				//console.log(result.latitude);
+				callback(result);
+			}
+			connection.release();
+		});
+	});
 }

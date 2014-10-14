@@ -575,34 +575,34 @@ $('#myTab a').click(function (e) {
         /* declare the variables, var error is the variable that we use on the end
         to determine if there was an error or not */
         var guesterror = false;
-        var guestname = $('#guest-name').val();
-        var guestemail = $('#guest-email').val();
-        var guestmessage = $('#guest-message').val();
+        var guestname = $('#guestName').val();
+        var guestemail = $('#guestEmail').val();
+        var guestmessage = $('#guestMessage').val();
         
         if(guestname.length == 0){
             var guesterror = true;
             //$('#name_error').fadeIn(500);
-            $('#guest-name').addClass('notcompleted');
-            $('#guest-name').attr('placeholder', 'Name is required!');
-            $('#guest-name').focus (function(){
+            $('#guestName').addClass('notcompleted');
+            $('#guestName').attr('placeholder', 'Name is required!');
+            $('#guestName').focus (function(){
                 $(this).removeClass('notcompleted');
             });
         }
         if(guestemail.length == 0 || guestemail.indexOf('@') == '-1'){
             var guesterror = true;
            // $('#email_error').fadeIn(500);
-            $('#guest-email').addClass('notcompleted');
-            $('#guest-email').attr('placeholder', 'Email is required!');
-            $('#guest-email').focus (function(){
+            $('#guestEmail').addClass('notcompleted');
+            $('#guestEmail').attr('placeholder', 'Email is required!');
+            $('#guestEmail').focus (function(){
                 $(this).removeClass('notcompleted');
             });
         }
         
         if(guestmessage.length == 0){
             var guesterror = true;
-            $('#guest-message').addClass('notcompleted');
-            $('#guest-message').attr('placeholder', 'Please leave us a message!');
-            $('#guest-message').focus (function(){
+            $('#guestMessage').addClass('notcompleted');
+            $('#guestMessage').attr('placeholder', 'Please leave us a message!');
+            $('#guestMessage').focus (function(){
                 $(this).removeClass('notcompleted');
             });
         }
