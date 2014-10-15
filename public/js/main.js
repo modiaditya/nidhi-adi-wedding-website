@@ -2,53 +2,7 @@
                   preloader
 =======================================================*/
 
-if( device.tablet() && device.mobile() ) {
-            
-    window.addEventListener("DOMContentLoaded", function() {
-        $("body").queryLoader2({
-              minimumTime: 500,
-              showbar: true,                 
-              barColor: "#fff",
-              textColor: "#000;",
-              backgroundColor: "#ff9192",
-              barHeight: '10',
-              percentage: true,                       
-              completeAnimation: "fade",
-              onComplete: function() {
-                  $(".bghide").fadeOut("fast", "easeInSine", function(){
-                    $(this).remove();
-                  }); 
-                  }
-            
-        });
-    });
-    
-} else {
-    $(document).ready(function() {
-        $("body").queryLoader2({
-            minimumTime: 500,
-            showbar: true,                 
-            barColor: "#fff",
-            textColor: "#000;",
-            backgroundColor: "#ff9192",
-            barHeight: '10',
-            percentage: true,                       
-            completeAnimation: "fade",
-            onComplete: function() {
-                $(".bghide").fadeOut("fast", "easeInSine", function(){
-                    $(this).remove();
-                }); 
-             }
-        
-        });
 
-        /* ===================================================
-            add fakeheight and hide classes
-        ======================================================= */ 
-        
-    });
-    
-};
 
 
 $(document).ready(function() {
