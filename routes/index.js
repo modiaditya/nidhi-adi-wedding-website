@@ -32,3 +32,7 @@ exports.getGuestbookRecords = function(req, res) {
 	})
 }
 
+exports.getGallery = function(req, res) {
+	res.render('gallery')
+}
+

@@ -73,7 +73,6 @@
                     <li><img src="img/slider/photo1.jpg" alt="photo 1" /></li>
                     <li><img src="img/slider/photo2.jpg" alt="photo 2" /></li>
                     <li><img src="img/slider/photo3.jpg" alt="photo 3" /></li>
-                    <li><img src="img/slider/photo4.jpg" alt="photo 4" /></li>
                 </ul><!-- /.slides -->
 
             </div><!-- /.flexslider -->
@@ -752,10 +751,8 @@
 
 
                 <!-- THE MAP -->
-                <div class="col-md-6 alignright">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d942.4448852768847!2d72.82548578677063!3d19.11732504856449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9e7a7b00dc1%3A0xda7279e38b5db98e!2sRitambhara+Banquet+Hall!5e0!3m2!1sen!2sus!4v1408122002956" style="width:100%;" height="300" frameborder="0" style="border:0"></iframe>
-
-                </div><!-- /.col-md-6-->
+                <div class="map">
+                </div>
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- weddinglocation -->
@@ -836,7 +833,6 @@
     ============================================================================================================== -->
 
     <section id="gallery1">
-
         <!-- "GALLERY 1" SECTION TITLE -->
         <div id="gallery1photo" class="parallax-hook parallax-gallery1 parallax-background">
             <div class="section-overlay">
@@ -1203,6 +1199,8 @@
 
         </div><!-- /.container -->
 
+        
+
     </section><!-- gallery1 -->
 
 
@@ -1403,6 +1401,12 @@
             }).done(function( data ) {
                 $( ".guestbookrow" ).append(data);    
             });
+
+            $.ajax({
+                url: "getGallery"
+            }).done(function(data){
+                $(".map").append(data);
+            })
             //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
         });
  
